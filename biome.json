@@ -1,0 +1,38 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+	"files": {
+		"ignore": ["**/*.js", "**/*.doctest.ts", "./dist", "./.pnpm-store"]
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"correctness": {
+				"all": true,
+				"noNodejsModules": "off",
+				"noUnusedVariables": "warn"
+			},
+			"complexity": {
+				"noUselessConstructor": "off",
+				"noForEach": "off"
+			},
+			"nursery": {
+				"all": true,
+				"useImportRestrictions": "error",
+				"useImportExtensions": "off"
+			},
+			"suspicious": {
+				"noShadowRestrictedNames": "off"
+			},
+			"style": {
+				"all": false
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true
+	}
+}

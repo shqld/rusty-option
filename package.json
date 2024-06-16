@@ -1,0 +1,25 @@
+{
+	"name": "rusty-option",
+	"version": "0.0.0",
+	"repository": "https://github.com/shqld/rusty-option",
+	"author": "Sho Miyamoto <me@shqld.dev>",
+	"license": "MIT",
+	"files": ["src", "dist"],
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/types/index.d.ts"
+		}
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.2",
+		"@types/node": "latest",
+		"@vitest/coverage-v8": "^1.6.0",
+		"esbuild": "^0.21.5",
+		"husky": "9",
+		"tsdoc-testify": "^0.0.3",
+		"typescript": "latest",
+		"vitest": "^1.6.0"
+	}
+}
