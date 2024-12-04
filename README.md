@@ -4,7 +4,7 @@ A rusty Option for TypeScript.
 
 > [!WARNING]
 > This is a **Proof of Concept (PoC)**.
-> It’s not meant for production: each method is intentionally verbose to show how this PoC works.
+> It’s not meant for production: each method is **intentionally verbose** to show how this PoC works.
 > Use it to experiment and maybe get inspired to build something even better!
 
 ## 🚀 Why rusty-option?
