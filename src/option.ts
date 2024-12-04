@@ -417,14 +417,14 @@ class None extends Option<never> {
 }
 
 Option.Some = (value) => new Some(value);
-// @ts-expect-error: ts(2332)
-// NOTE: Prevents runtime errors when mistakenly used as
-//       the right-hand side of an `instanceof` check.
-Option.None = () => {};
-Object.setPrototypeOf(Option.None, None.prototype);
-
 // NOTE: Prevent `Some(1) instanceof Some` from returning `true`
 Option.Some.prototype = {};
+
+// NOTE: Prevents runtime errors when mistakenly used as
+//       the right-hand side of an `instanceof` check and
+//       prevent `None instanceof None` from returning `true`
+// @ts-expect-error: ts(2332)
+Option.None = () => {};
 // @ts-expect-error: ts(2339)
-// NOTE: Prevent `None instanceof None` from returning `true`
 Option.None.prototype = {};
+Object.setPrototypeOf(Option.None, None.prototype);
