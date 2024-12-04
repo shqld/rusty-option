@@ -40,13 +40,13 @@ describe("for-of", () => {
 describe("from", () => {
 	test("Some", () => {
 		const option = Option.from("Some");
-		expect(option.is_some()).toBe(true);
+		expect(option.isSome()).toBe(true);
 		expect(option.unwrap()).toBe("Some");
 	});
 
 	test("None", () => {
 		const option = Option.from(null);
-		expect(option.is_none()).toBe(true);
+		expect(option.isNone()).toBe(true);
 		expect(() => option.unwrap()).toThrow();
 	});
 });

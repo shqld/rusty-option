@@ -3,32 +3,32 @@
 import { Some, None, Option } from "rusty-option";
 test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_0", () => {
   let x = Some(2);
-  assert.equal(x.is_some(), true);
+  assert.equal(x.isSome(), true);
   let y = None;
-  assert.equal(y.is_some(), false);
+  assert.equal(y.isSome(), false);
 });
 test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_1", () => {
   let x = Some(2);
   assert.equal(
-    x.is_some_and(x => x > 1),
+    x.isSomeAnd(x => x > 1),
     true
   );
   let y = Some(0);
   assert.equal(
-    y.is_some_and(x => x > 1),
+    y.isSomeAnd(x => x > 1),
     false
   );
   let z = None;
   assert.equal(
-    z.is_some_and(x => x > 1),
+    z.isSomeAnd(x => x > 1),
     false
   );
 });
 test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_2", () => {
   let x = Some(2);
-  assert.equal(x.is_none(), false);
+  assert.equal(x.isNone(), false);
   let y = None;
-  assert.equal(y.is_none(), true);
+  assert.equal(y.isNone(), true);
 });
 test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_3", () => {
   let x = Some("value");
@@ -43,17 +43,17 @@ test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_4", () => {
   assert.throws(() => y.unwrap());
 });
 test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_5", () => {
-  assert.equal(Some("car").unwrap_or("bike"), "car");
-  assert.equal(None.unwrap_or("bike"), "bike");
+  assert.equal(Some("car").unwrapOr("bike"), "car");
+  assert.equal(None.unwrapOr("bike"), "bike");
 });
 test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_6", () => {
   let k = 10;
   assert.equal(
-    Some(4).unwrap_or_else(() => 2 * k),
+    Some(4).unwrapOrElse(() => 2 * k),
     4
   );
   assert.equal(
-    None.unwrap_or_else(() => 2 * k),
+    None.unwrapOrElse(() => 2 * k),
     20
   );
 });
@@ -77,12 +77,12 @@ test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_8", () => {
 test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_9", () => {
   let x = Some("foo");
   assert.equal(
-    x.map_or(42, v => v.length),
+    x.mapOr(42, v => v.length),
     3
   );
   let y = None;
   assert.equal(
-    y.map_or(42, v => v.length),
+    y.mapOr(42, v => v.length),
     42
   );
 });
@@ -90,7 +90,7 @@ test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_10", () => {
   let k = 21;
   let x = Some("foo");
   assert.equal(
-    x.map_or_else(
+    x.mapOrElse(
       () => 2 * k,
       v => v.length
     ),
@@ -98,7 +98,7 @@ test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_10", () => {
   );
   let y = None;
   assert.equal(
-    y.map_or_else(
+    y.mapOrElse(
       () => 2 * k,
       v => v.length
     ),
@@ -132,11 +132,11 @@ test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_12", () => {
     ["A0", "A1"],
     ["B0", "B1"]
   ];
-  let item_0_1 = Option.from(arr_2d.at(0)).and_then(row =>
+  let item_0_1 = Option.from(arr_2d.at(0)).andThen(row =>
     Option.from(row.at(1))
   );
   assert.deepEqual(item_0_1, Some("A1"));
-  let item_2_0 = Option.from(arr_2d.at(2)).and_then(row =>
+  let item_2_0 = Option.from(arr_2d.at(2)).andThen(row =>
     Option.from(row.at(0))
   );
   assert.deepEqual(item_2_0, None);
@@ -174,9 +174,9 @@ test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_14", () => {
 test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_15", () => {
   const nobody = () => None;
   const vikings = () => Some("vikings");
-  assert.deepEqual(Some("barbarians").or_else(vikings), Some("barbarians"));
-  assert.deepEqual(None.or_else(vikings), Some("vikings"));
-  assert.deepEqual(None.or_else(nobody), None);
+  assert.deepEqual(Some("barbarians").orElse(vikings), Some("barbarians"));
+  assert.deepEqual(None.orElse(vikings), Some("vikings"));
+  assert.deepEqual(None.orElse(nobody), None);
 });
 test("/Users/sho/ghq/github.com/shqld/option-result/src/option.ts_16", () => {
   {
