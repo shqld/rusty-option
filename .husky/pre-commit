@@ -1,1 +1,2 @@
-CI=true make check test
+CI=true make fix type test
+git add .
