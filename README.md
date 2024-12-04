@@ -33,8 +33,8 @@ for (let v of debug) {
 let text = process.env.TEXT;
 let result = Option.from(text.match(/rusty_(.+)/));
 
-for (let [_, somthingRusty] of result) {
-  console.log(`rusty: ${somthingRusty}`);
+for (let [_, somethingRusty] of result) {
+  console.log(`rusty: ${somethingRusty}`);
 }
 
 let n = Math.random() > 0.5 ? Some("foo") : None;
