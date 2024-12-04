@@ -1,6 +1,6 @@
 {
 	"name": "rusty-option",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"repository": "https://github.com/shqld/rusty-option",
 	"author": "Sho Miyamoto <me@shqld.dev>",
 	"license": "MIT",
