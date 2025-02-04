@@ -20,6 +20,6 @@
 		"husky": "9",
 		"tsdoc-testify": "^0.0.3",
 		"typescript": "latest",
-		"vitest": "^1.6.0"
+		"vitest": "^1.6.1"
 	}
 }
